@@ -23,10 +23,10 @@ const App = () => {
           Senior Android Developer Portfolio
         </h2>
         <p style={{fontSize: '1.2rem', color: '#a0a0a0'}}>
-          🎉 Portfolio working! This is the REAL custom React app!
+          🚀 PORTFOLIO DEPLOYED SUCCESSFULLY! This is your custom React app!
         </p>
         <p style={{fontSize: '1rem', color: '#888', marginTop: '1rem'}}>
-          If you see this, the deployment is working correctly.
+          Updated: {new Date().toLocaleString()} - GitHub Actions deployment working!
         </p>
       </div>
     </>

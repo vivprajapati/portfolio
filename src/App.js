@@ -17,7 +17,7 @@ const App = () => {
         color: '#e0e0e0'
       }}>
         <h1 style={{fontSize: '3rem', marginBottom: '1rem', color: '#4f46e5'}}>
-          Vivek Prajapati
+          🔥 Vivek Prajapati - LIVE DEPLOYMENT! 🔥
         </h1>
         <h2 style={{fontSize: '1.5rem', marginBottom: '2rem', color: '#e0e0e0'}}>
           Senior Android Developer Portfolio

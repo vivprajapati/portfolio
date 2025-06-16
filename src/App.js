@@ -17,16 +17,16 @@ const App = () => {
         color: '#e0e0e0'
       }}>
         <h1 style={{fontSize: '3rem', marginBottom: '1rem', color: '#4f46e5'}}>
-          🔥 Vivek Prajapati - LIVE DEPLOYMENT! 🔥
+          ⚡ VIVEK PRAJAPATI - PORTFOLIO LIVE ⚡
         </h1>
         <h2 style={{fontSize: '1.5rem', marginBottom: '2rem', color: '#e0e0e0'}}>
-          Senior Android Developer Portfolio
+          Senior Android Developer Portfolio - Updated: June 16, 2025
         </h2>
         <p style={{fontSize: '1.2rem', color: '#a0a0a0'}}>
-          ✅ WORKFLOW FIXED! Custom React Portfolio Loading Successfully!
+          🎯 SUCCESS! This is your REAL custom portfolio - NOT the default React page!
         </p>
         <p style={{fontSize: '1rem', color: '#888', marginTop: '1rem'}}>
-          Updated: {new Date().toLocaleString()} - GitHub Actions deployment working!
+          Build timestamp: {Date.now()} - If you see this, deployment is working!
         </p>
       </div>
     </>

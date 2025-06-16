@@ -302,8 +302,7 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 20px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        margin: 2rem auto;
-        margin-top: 6rem;
+        margin: -3rem auto;
     }
 
     #about p {

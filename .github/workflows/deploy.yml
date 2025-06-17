@@ -1,4 +1,4 @@
-name: Deploy Portfolio to GitHub Pages
+name: CI/CD Pipeline - Portfolio
 
 on:
   push:
@@ -12,8 +12,53 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Job 1: Run tests and code quality checks
+  test:
+    runs-on: ubuntu-latest
+    name: Test & Code Quality
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run ESLint
+      run: npm run lint --if-present || npx eslint src --ext .js,.jsx,.ts,.tsx --max-warnings 0
+      continue-on-error: false
+    
+    - name: Run Tests
+      run: npm test -- --coverage --watchAll=false --passWithNoTests
+      env:
+        CI: true
+    
+    - name: Upload test coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+    
+    - name: Test Build
+      run: npm run build
+      env:
+        PUBLIC_URL: /portfolio
+
+  # Job 2: Build and deploy (only on main/master push)
   build-and-deploy:
     runs-on: ubuntu-latest
+    name: Build & Deploy
+    needs: test
+    # Only run on push to main/master (not on PRs)
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:

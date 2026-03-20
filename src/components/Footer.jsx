@@ -1,135 +1,106 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FooterWrap = styled.footer`
+  padding: var(--space-xl) 5vw;
+  border-top: 1px solid var(--color-outline-variant);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.5;
+  }
+`;
+
+const Inner = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+`;
+
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+
+  .copyright {
+    font-size: 0.72rem;
+    color: var(--color-outline);
+    letter-spacing: 0.02em;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+    color: var(--color-outline-variant);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+`;
+
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+
+  a {
+    font-size: 0.72rem;
+    color: var(--color-outline) !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-primary);
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--color-primary) !important;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+`;
 
 const Footer = () => {
-    return (
-        <>
-            {/* Contact Section */}
-            <section id="contact" style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-                marginTop: '4rem'
-            }}>
-                <h2>Let's Connect</h2>
-                <p style={{marginBottom: '2rem'}}>
-                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
-                </p>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '2rem',
-                    flexWrap: 'wrap',
-                    marginBottom: '2rem'
-                }}>
-                    <a href="mailto:vivprajapati1520@gmail.com" style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        padding: '1rem 2rem',
-                        background: 'rgba(79, 70, 229, 0.1)',
-                        border: '1px solid rgba(79, 70, 229, 0.2)',
-                        borderRadius: '25px',
-                        textDecoration: 'none',
-                        fontWeight: '600',
-                        transition: 'all 0.3s ease'
-                    }}>
-                        📧 Email Me
-                    </a>
-                    <a href="tel:+919892499840" style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        padding: '1rem 2rem',
-                        background: 'rgba(6, 182, 212, 0.1)',
-                        border: '1px solid rgba(6, 182, 212, 0.2)',
-                        borderRadius: '25px',
-                        textDecoration: 'none',
-                        fontWeight: '600',
-                        transition: 'all 0.3s ease'
-                    }}>
-                        📱 Call Me
-                    </a>
-                </div>
-            </section>
-            
-            {/* Footer */}
-            <footer>
-                <div style={{marginBottom: '2rem'}}>
-                    <h3 style={{color: '#4f46e5', marginBottom: '1rem'}}>Vivek Prajapati</h3>
-                    <p style={{color: '#94a3b8', marginBottom: '2rem'}}>Senior Android Developer | Building the future of mobile communication</p>
-                </div>
-                
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '2rem',
-                    flexWrap: 'wrap',
-                    marginBottom: '2rem'
-                }}>
-                    <a href="https://www.linkedin.com/in/vivek-prajapati-839261181/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       style={{
-                           display: 'flex',
-                           alignItems: 'center',
-                           gap: '0.5rem',
-                           padding: '0.8rem 1.5rem',
-                           background: 'rgba(79, 70, 229, 0.1)',
-                           border: '1px solid rgba(79, 70, 229, 0.2)',
-                           borderRadius: '25px',
-                           textDecoration: 'none',
-                           fontWeight: '500',
-                           transition: 'all 0.3s ease'
-                       }}>
-                        💼 LinkedIn
-                    </a>
-                    <a href="https://github.com/vivekCometChat" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       style={{
-                           display: 'flex',
-                           alignItems: 'center',
-                           gap: '0.5rem',
-                           padding: '0.8rem 1.5rem',
-                           background: 'rgba(79, 70, 229, 0.1)',
-                           border: '1px solid rgba(79, 70, 229, 0.2)',
-                           borderRadius: '25px',
-                           textDecoration: 'none',
-                           fontWeight: '500',
-                           transition: 'all 0.3s ease'
-                       }}>
-                        💻 GitHub
-                    </a>
-                    <a href="https://www.cometchat.com/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       style={{
-                           display: 'flex',
-                           alignItems: 'center',
-                           gap: '0.5rem',
-                           padding: '0.8rem 1.5rem',
-                           background: 'rgba(79, 70, 229, 0.1)',
-                           border: '1px solid rgba(79, 70, 229, 0.2)',
-                           borderRadius: '25px',
-                           textDecoration: 'none',
-                           fontWeight: '500',
-                           transition: 'all 0.3s ease'
-                       }}>
-                        🚀 CometChat
-                    </a>
-                </div>
-                
-                <div style={{
-                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-                    paddingTop: '2rem',
-                    textAlign: 'center'
-                }}>
-                    <p style={{color: '#64748b', fontSize: '0.9rem', margin: 0}}>
-                        © 2025 Vivek Prajapati. Built with React & ❤️
-                    </p>
-                </div>
-            </footer>
-        </>
-    );
+  return (
+    <FooterWrap>
+      <Inner>
+        <Left>
+          <span className="copyright">
+            © {new Date().getFullYear()} Vivek Prajapati. Built with ❤️ and lots of ☕
+          </span>
+          <span className="tagline">VP</span>
+        </Left>
+        <Right>
+          <a href="https://www.linkedin.com/in/vivek-prajapati-839261181/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/vivekCometChat" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:vivprajapati1520@gmail.com">Email</a>
+        </Right>
+      </Inner>
+    </FooterWrap>
+  );
 };
 
 export default Footer;

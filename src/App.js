@@ -1,28 +1,28 @@
 import React from 'react';
 import Header from './components/Header';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Achievements from './components/Achievements';
+import Hero from './components/Hero';
+import TechnicalArsenal from './components/TechnicalArsenal';
+import ServiceExcellence from './components/ServiceExcellence';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import HireMe from './components/HireMe';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import GlassBackground from './components/GlassBackground';
 import GlobalStyle from './styles/globalStyles';
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <GlassBackground />
       <Header />
       <main>
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <Achievements />
+        <Hero />
+        <TechnicalArsenal />
+        <ServiceExcellence />
         <Projects />
+        <Experience />
+        <HireMe />
+        <Contact />
       </main>
       <Footer />
     </>
